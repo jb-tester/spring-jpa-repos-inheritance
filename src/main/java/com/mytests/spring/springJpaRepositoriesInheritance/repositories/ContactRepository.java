@@ -13,15 +13,14 @@ import java.util.List;
  * *
  */
 public interface ContactRepository extends AbstractTelMailRepository<ContactEntity>, CommonExtraBaseRepository<ContactEntity> {
+
     @Override
-    List<ContactEntity> findByAttrPatterns(List<String> patterns, String attrName); // should not display an error for the inherited implemented method!
+    List<ContactEntity> findByAttrPatterns(List<String> patterns, String attrName); // don't display an error for the inherited implemented method!
 
     //@Override
     // List<ContactEntity> findByTelephones(List<String> telephones); // error is displayed - ok!
 
 
-    @Override
-    void deleteAllByIdInBatch(Iterable<Integer> integers);// should not display an error: https://youtrack.jetbrains.com/issue/IDEA-301097
 
 
 }
